@@ -9,6 +9,10 @@ The Android app opens these paths from Settings and sign-in:
 - https://xcat-hub.github.io/cleansketch/PRIVACY_POLICY.html
 - https://xcat-hub.github.io/cleansketch/TERMS_OF_SERVICE.html
 
+Google Play Console account deletion URL:
+
+- https://xcat-hub.github.io/cleansketch/delete-account.html
+
 ## Pages
 
 | Path | Description |
@@ -16,6 +20,7 @@ The Android app opens these paths from Settings and sign-in:
 | `/` | Product homepage |
 | `/PRIVACY_POLICY.html` | Privacy Policy |
 | `/TERMS_OF_SERVICE.html` | Terms of Service |
+| `/delete-account.html` | Account & data deletion request |
 | `/app-ads.txt` | AdMob `app-ads.txt` (also copied under `public/`) |
 
 ## Development

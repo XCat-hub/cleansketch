@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry, render } from 'astro:content';
+import { SITE } from '../data/site';
+
+const entry = await getEntry('legal', 'delete-account');
+if (!entry) {
+  throw new Error('Account deletion content not found');
+}
+const { Content } = await render(entry);
+
+const mailto = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent('Account Deletion Request - CleanSketch')}`;
+---
+
+<BaseLayout
+  title="Account Deletion"
+  description="Request deletion of your CleanSketch account and associated data stored by GZLL Studio."
+>
+  <section class="section legal">
+    <div class="container prose">
+      <Content />
+      <p>
+        <a class="btn btn-primary" href={mailto}>Email deletion request</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+</style>

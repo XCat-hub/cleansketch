@@ -55,7 +55,7 @@ We do not knowingly solicit information from children under 13. If you believe w
 
 ## 7. Your Choices
 
-You may sign out, disable Drive backup, or request account deletion by contacting us.
+You may sign out, disable Drive backup, or [request account deletion](https://xcat-hub.github.io/cleansketch/delete-account.html).
 
 ## 8. Contact Us
 
