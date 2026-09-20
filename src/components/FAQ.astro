@@ -1,0 +1,89 @@
+---
+const faqs = [
+  {
+    question: 'Do I need a Google account?',
+    answer:
+      'No. You can draw locally without signing in. A Google account is required for Drive backup, restoring a purchase, and some account features.',
+  },
+  {
+    question: 'What is CleanSketch Pro?',
+    answer:
+      'Pro is a one-time Google Play purchase. It removes ads and unlocks custom canvas sizes and all particle effect brushes. There is no subscription and no auto-renewal.',
+  },
+  {
+    question: 'Are there ads?',
+    answer:
+      'The free version may show app-open ads. You can also watch a rewarded ad for one day of Pro. Pro users do not see ads.',
+  },
+  {
+    question: 'Where is my artwork stored?',
+    answer:
+      'Drawings are stored on your device by default. If you sign in and enable backup, packages are uploaded to your own Google Drive app-data folder. We do not use your drawings for AI generation.',
+  },
+  {
+    question: 'Which languages are supported?',
+    answer:
+      'The app supports 15+ languages including English, Chinese (Simplified, Traditional, and Hong Kong), Japanese, Korean, Arabic, Spanish, French, German, Portuguese, Italian, Russian, Indonesian, Hindi, Thai, Tamil, Bengali, and Urdu.',
+  },
+];
+---
+
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title">FAQ</h2>
+    <p class="section-subtitle">Common questions about CleanSketch.</p>
+    <div class="faq-list">
+      {
+        faqs.map((item) => (
+          <details class="faq-item card">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 42rem;
+    margin-inline: auto;
+  }
+
+  .faq-item {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    float: right;
+    font-weight: 400;
+    color: var(--color-primary);
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    margin: 0;
+    padding: 0 1.25rem 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-on-surface-variant);
+  }
+</style>

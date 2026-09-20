@@ -1,0 +1,91 @@
+---
+const steps = [
+  {
+    number: '1',
+    title: 'Create a canvas',
+    description:
+      'Start from a size preset, a custom size, or an image. The canvas matches what you pick so you can sketch or color on top.',
+  },
+  {
+    number: '2',
+    title: 'Draw',
+    description:
+      'Use layers, pens, shapes, fill, and particle brushes. Undo, redo, and organize pages as you go.',
+  },
+  {
+    number: '3',
+    title: 'Export or back up',
+    description:
+      'Save a high-quality export to your device, share your work, or optionally back up drawings to Google Drive.',
+  },
+];
+---
+
+<section class="section" id="how-it-works">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">
+      Three steps from a blank canvas to a finished sketch.
+    </p>
+    <ol class="steps">
+      {
+        steps.map((step) => (
+          <li class="step card">
+            <div class="step-header">
+              <span class="step-number">{step.number}</span>
+              <h3>{step.title}</h3>
+            </div>
+            <p>{step.description}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .steps {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 768px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .step h3 {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+
+  .step p {
+    margin: 0;
+    color: var(--color-on-surface-variant);
+    font-size: 0.9375rem;
+  }
+</style>

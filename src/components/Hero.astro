@@ -1,0 +1,198 @@
+---
+import { SITE, PLAY_STORE_BADGE } from '../data/site';
+---
+
+<section class="hero section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Drawing &amp; Coloring</p>
+      <h1>{SITE.name}: {SITE.tagline}</h1>
+      <p class="hero-desc">{SITE.description}</p>
+      <div class="hero-actions">
+        <a
+          class="play-badge"
+          href={SITE.playStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Get CleanSketch on Google Play"
+        >
+          <img src={PLAY_STORE_BADGE} alt="Get it on Google Play" width="180" height="70" />
+        </a>
+        <a class="btn btn-outline" href="#how-it-works">See how it works</a>
+      </div>
+      <ul class="hero-meta">
+        <li>Multi-layer canvas</li>
+        <li>15+ languages</li>
+        <li>Light &amp; dark themes</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="mock-toolbar"></div>
+          <div class="mock-canvas">
+            <svg viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M36 210 C58 150, 88 128, 120 118 S186 108, 208 64"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <circle cx="86" cy="168" r="28" fill="none" stroke="currentColor" stroke-width="2" opacity="0.45" />
+              <rect x="132" y="176" width="52" height="36" rx="6" fill="none" stroke="currentColor" stroke-width="2" opacity="0.45" />
+            </svg>
+          </div>
+          <div class="mock-tools">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 0%, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent),
+      radial-gradient(ellipse 60% 50% at 90% 20%, color-mix(in srgb, var(--color-secondary) 14%, transparent), transparent);
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .hero-grid {
+      grid-template-columns: 1fr 0.9fr;
+    }
+  }
+
+  .hero-eyebrow {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  .hero-copy h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-desc {
+    margin: 0 0 1.75rem;
+    font-size: 1.125rem;
+    color: var(--color-on-surface-variant);
+    max-width: 32rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .play-badge img {
+    height: 56px;
+    width: auto;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--color-on-surface-variant);
+  }
+
+  .hero-meta li::before {
+    content: '✓ ';
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  .phone-frame {
+    max-width: 280px;
+    margin-inline: auto;
+    padding: 0.75rem;
+    border-radius: 2rem;
+    background: var(--color-surface-container-high);
+    box-shadow: var(--shadow-2);
+    border: 2px solid color-mix(in srgb, var(--color-outline) 30%, transparent);
+  }
+
+  .phone-screen {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: var(--color-surface-container);
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-primary);
+  }
+
+  .mock-toolbar {
+    height: 2.5rem;
+    background: color-mix(in srgb, var(--color-on-surface) 65%, transparent);
+  }
+
+  .mock-canvas {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .mock-canvas {
+      background: #2a2b30;
+    }
+  }
+
+  .mock-canvas svg {
+    width: 100%;
+    max-height: 220px;
+  }
+
+  .mock-tools {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 0.75rem 1rem;
+  }
+
+  .mock-tools span {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--color-primary-container);
+  }
+
+  .mock-tools span:nth-child(2) {
+    background: var(--color-secondary-container);
+  }
+
+  .mock-tools span:nth-child(3) {
+    background: var(--color-tertiary-container);
+  }
+</style>

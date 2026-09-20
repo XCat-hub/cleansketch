@@ -1,0 +1,84 @@
+---
+const features = [
+  {
+    icon: '🖌️',
+    title: 'Multi-layer canvas',
+    description:
+      'Draw, erase, fill, and organize work across layers and pages. Zoom, pan, and keep a clean history with undo and redo.',
+  },
+  {
+    icon: '✨',
+    title: 'Brushes, shapes, and effects',
+    description:
+      'Pens, pencil, marker, bristle, fill, eyedropper, and shapes — plus particle brushes like sparkle, sakura, and aurora.',
+  },
+  {
+    icon: '📐',
+    title: 'Canvas your way',
+    description:
+      'Screen, square, print, and custom sizes. Start from a photo so the canvas matches the image. Custom sizes unlock with Pro.',
+  },
+  {
+    icon: '📤',
+    title: 'High-quality export',
+    description:
+      'Export finished artwork to your device and share sketches without leaving the app.',
+  },
+  {
+    icon: '☁️',
+    title: 'Google Drive backup',
+    description:
+      'Sign in with Google to optionally back up and restore drawing packages in your Drive app-data folder.',
+  },
+  {
+    icon: '💎',
+    title: 'CleanSketch Pro',
+    description:
+      'A one-time purchase: ad-free experience, custom canvas size, and all particle effect brushes. No subscription.',
+  },
+];
+---
+
+<section class="section alt-bg" id="features">
+  <div class="container">
+    <h2 class="section-title">Key Features</h2>
+    <p class="section-subtitle">
+      Everything you need to sketch, color, and keep your work — in one app.
+    </p>
+    <div class="card-grid">
+      {
+        features.map((feature) => (
+          <article class="feature card">
+            <span class="feature-icon" aria-hidden="true">{feature.icon}</span>
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .alt-bg {
+    background: var(--color-surface-container);
+  }
+
+  .feature-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .feature h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .feature p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-on-surface-variant);
+  }
+</style>
